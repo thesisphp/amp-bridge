@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Thesis\Ampridge;
 
-use Amp\Cancellation;
 use Amp\Socket\Socket;
 use Thesis\ByteReader\Reader;
-use Thesis\ByteReader\ReaderIsClosed;
+use Thesis\ByteReader\UnexpectedEof;
+use Thesis\ByteWriter\WriteFailed;
 use Thesis\ByteWriter\Writer;
-use Thesis\ByteWriter\WriterIsClosed;
 
 /**
  * @api
@@ -22,16 +21,16 @@ final class ReaderWriter implements
         private readonly Socket $socket,
     ) {}
 
-    public function read(int $limit, ?Cancellation $cancellation = null): string
+    public function read(int $limit): string
     {
         try {
-            $bytes = $this->socket->read(cancellation: $cancellation, limit: $limit) ?: null;
+            $bytes = $this->socket->read(limit: $limit) ?: null;
         } catch (\Throwable $e) {
-            throw new ReaderIsClosed($e->getMessage(), (int) $e->getCode(), $e);
+            throw new UnexpectedEof($e->getMessage(), (int) $e->getCode(), $e);
         }
 
         if ($bytes === null) {
-            throw new ReaderIsClosed();
+            throw new UnexpectedEof();
         }
 
         return $bytes;
@@ -42,7 +41,7 @@ final class ReaderWriter implements
         try {
             $this->socket->write($bytes);
         } catch (\Throwable $e) {
-            throw new WriterIsClosed($e->getMessage(), (int) $e->getCode(), $e);
+            throw new WriteFailed($e->getMessage(), (int) $e->getCode(), $e);
         }
     }
 }

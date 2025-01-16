@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c163ce61155383c365ef6c0d89fd8ea8",
+    "content-hash": "89c95d0e99da6073ffbe219bf40dd6a1",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1188,20 +1188,19 @@
         },
         {
             "name": "thesis/bytereader",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thesisphp/bytereader.git",
-                "reference": "4cffd739c61ba5a6b320d874f539fcbbda5a777c"
+                "reference": "cf20c01024bea853364f125e2cb280147381b2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thesisphp/bytereader/zipball/4cffd739c61ba5a6b320d874f539fcbbda5a777c",
-                "reference": "4cffd739c61ba5a6b320d874f539fcbbda5a777c",
+                "url": "https://api.github.com/repos/thesisphp/bytereader/zipball/cf20c01024bea853364f125e2cb280147381b2b6",
+                "reference": "cf20c01024bea853364f125e2cb280147381b2b6",
                 "shasum": ""
             },
             "require": {
-                "amphp/amp": "^3.0",
                 "php": "^8.3"
             },
             "require-dev": {
@@ -1242,7 +1241,7 @@
             "description": "Reader abstraction for I/O.",
             "support": {
                 "issues": "https://github.com/thesisphp/bytereader/issues",
-                "source": "https://github.com/thesisphp/bytereader/tree/0.1.0"
+                "source": "https://github.com/thesisphp/bytereader/tree/0.2.0"
             },
             "funding": [
                 {
@@ -1250,20 +1249,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-01-16T06:26:06+00:00"
+            "time": "2025-01-16T15:21:44+00:00"
         },
         {
             "name": "thesis/bytewriter",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thesisphp/bytewriter.git",
-                "reference": "d17c7714cf7c5a45a2a3931c819d8e02d2c0f59a"
+                "reference": "86a139b3d268aad0ac316adf4e7a80a46c909d83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thesisphp/bytewriter/zipball/d17c7714cf7c5a45a2a3931c819d8e02d2c0f59a",
-                "reference": "d17c7714cf7c5a45a2a3931c819d8e02d2c0f59a",
+                "url": "https://api.github.com/repos/thesisphp/bytewriter/zipball/86a139b3d268aad0ac316adf4e7a80a46c909d83",
+                "reference": "86a139b3d268aad0ac316adf4e7a80a46c909d83",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1306,7 @@
             "description": "Writer abstraction for I/O.",
             "support": {
                 "issues": "https://github.com/thesisphp/bytewriter/issues",
-                "source": "https://github.com/thesisphp/bytewriter/tree/0.1.0"
+                "source": "https://github.com/thesisphp/bytewriter/tree/0.2.0"
             },
             "funding": [
                 {
@@ -1315,7 +1314,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-01-16T06:28:40+00:00"
+            "time": "2025-01-16T15:34:09+00:00"
         }
     ],
     "packages-dev": [
