@@ -1,5 +1,5 @@
 {
-    "name": "thesis/ampridge",
+    "name": "thesis/amp-bridge",
     "description": "Reader/Writer bridge to amphp/socket.",
     "license": "MIT",
     "type": "library",
@@ -20,8 +20,8 @@
     "require": {
         "php": "^8.3",
         "amphp/socket": "^2.3",
-        "thesis/bytereader": "^0.2.0",
-        "thesis/bytewriter": "^0.2.0"
+        "thesis/byte-reader": "^0.3.1",
+        "thesis/byte-writer": "^0.2.1"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.8.2",
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Thesis\\Ampridge\\": "src/"
+            "Thesis\\AmpBridge\\": "src/"
         }
     },
     "config": {

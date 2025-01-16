@@ -1,9 +1,9 @@
-# Ampridge
+# Amp Bridge
 
 ## Installation
 
 ```shell
-composer require thesis/ampridge
+composer require thesis/amp-bridge
 ```
 
 ## Basic usage
@@ -14,7 +14,7 @@ composer require thesis/ampridge
 declare(strict_types=1);
 
 use Amp\Socket;
-use Thesis\Ampridge\ReaderWriter;
+use Thesis\AmpBridge\ReaderWriter;
 
 $socket = Socket\connect('tcp://127.0.0.1:5432');
 

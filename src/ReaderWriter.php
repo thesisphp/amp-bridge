@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thesis\Ampridge;
+namespace Thesis\AmpBridge;
 
 use Amp\Socket\Socket;
 use Thesis\ByteReader\Reader;
