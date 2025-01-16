@@ -1,6 +1,6 @@
 {
-    "name": "thesis/template",
-    "description": "Thesis Template",
+    "name": "thesis/ampridge",
+    "description": "Reader/Writer bridge to amphp/socket.",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -9,27 +9,27 @@
             "email": "udaltsov.valentin@gmail.com"
         },
         {
+            "name": "kafkiansky",
+            "email": "vadimzanfir@gmail.com"
+        },
+        {
             "name": "Thesis Team",
             "homepage": "https://github.com/orgs/thesisphp/people"
         }
     ],
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "amphp/socket": "^2.3",
+        "thesis/bytereader": "^0.1.0",
+        "thesis/bytewriter": "^0.1.0"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.8.2",
-        "ergebnis/composer-normalize": "^2.45.0",
-        "phpunit/phpunit": "^10.5.40",
-        "symfony/var-dumper": "^6.4.15 || ^7.2.0"
+        "ergebnis/composer-normalize": "^2.45.0"
     },
     "autoload": {
         "psr-4": {
-            "Thesis\\Template\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Thesis\\Template\\": "tests/"
+            "Thesis\\Ampridge\\": "src/"
         }
     },
     "config": {
@@ -51,12 +51,18 @@
         }
     },
     "scripts": {
+        "check": [
+            "@composer fixcs -- --dry-run",
+            "@phpstan",
+            "@composer validate",
+            "@composer normalize --dry-run",
+            "@check-require",
+            "@check-unused"
+        ],
         "check-require": "tools/composer-require-checker/vendor/bin/composer-require-checker",
         "check-unused": "tools/composer-unused/vendor/bin/composer-unused",
         "fixcs": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --diff --verbose",
-        "infection": "tools/infection/vendor/bin/infection --show-mutations",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyze",
-        "pre-command-run": "mkdir -p var",
-        "test": "phpunit"
+        "pre-command-run": "mkdir -p var"
     }
 }
